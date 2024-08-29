@@ -1,17 +1,18 @@
-/* Wall texture background */
+/* Cork board texture background */
 body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background-color: hsl(72, 69%, 25%); /* Light beige base color */
+    background-color: #deb887; /* Burlywood color as base */
     background-image: 
-        linear-gradient(90deg, transparent 50%, rgba(244, 219, 219, 0.19) 50%);
-        linear-gradient(90deg, transparent 50%, rgba(44, 36, 36, 0.19) 50%);
-    background-size: 13px, 29px, 37px, 53px;
+        radial-gradient(circle, rgba(255,255,255,.1) 20%, transparent 20%),
+        radial-gradient(circle, rgba(255,255,255,.1) 20%, transparent 20%);
+    background-size: 10px 10px;
+    background-position: 0 0, 5px 5px;
     font-family: Arial, sans-serif;
 }
 
-/* Subtle texture overlay */
+/* Subtle cork texture overlay */
 body::before {
     content: "";
     position: fixed;
@@ -20,7 +21,7 @@ body::before {
     width: 100%;
     height: 100%;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23000000' fill-opacity='0.05' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-    opacity: 0.5;
+    opacity: 0.7;
     z-index: -1;
 }
 
@@ -38,10 +39,21 @@ body::before {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.141);
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: rotate(-1deg);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:nth-child(even) {
+    transform: rotate(1deg);
+}
+
+.portfolio-item:hover {
+    transform: scale(1.02) rotate(0);
+    z-index: 1;
 }
 
 .portfolio-images {
@@ -56,37 +68,26 @@ body::before {
     width: 220px;
     height: 170px;
     background-color: #f5f5f5;
-    border: 10px solid #8b4513;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border: 5px solid #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
 }
 
+/* Thumbtack */
 .image-frame::before {
     content: "";
     position: absolute;
-    top: -20px;
+    top: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 20px;
-    height: 20px;
-    background-color: #4a4a4a;
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle at 30% 30%, #f00, #900);
     border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.image-frame::after {
-    content: "";
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 20px;
-    background-color: #4a4a4a;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .portfolio-item img {
@@ -97,11 +98,9 @@ body::before {
 }
 
 .portfolio-item img:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
-/* The rest of your CSS (modal styling, etc.) remains unchanged */
-/* ... */
 /* Modal styling */
 .modal {
     display: none;
@@ -172,15 +171,47 @@ body::before {
     color: #bbb;
 }
 
-/* Additional styling for hiding buttons */
-.hidden {
-    visibility: hidden;
-    opacity: 0;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
+/* Responsive design */
+@media screen and (max-width: 768px) {
     .portfolio-item {
         width: calc(100% - 40px);
+        margin: 10px;
+    }
+
+    .image-frame {
+        width: 100%;
+        height: auto;
+    }
+
+    .portfolio-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    .prev, .next {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .close {
+        font-size: 28px;
+        top: 5px;
+        right: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        background-size: 5px 5px;
+    }
+
+    .portfolio-item {
+        padding: 10px;
+    }
+
+    .image-frame::before {
+        width: 8px;
+        height: 8px;
+        top: -10px;
     }
 }
