@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: 'Zenocycle Project',
-            images: ['images/zenocycle/1.png', 'images/zenocycle/2.png', 'images/zenocycle/3.png'],
+            images: ['images/zenocycle/1.png', 'images/zenocycle/2.png', 'images/zenocycle/3.png', 'images/zenocycle/4.png', 'images/zenocycle/5.png'],
             description: 'This is a brief description of the Zenocycle project...'
         },
         {
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
             frame.classList.add('image-frame');
             const img = document.createElement('img');
             img.src = src;
-            img.alt = src;
+            img.alt = project.title;
             img.addEventListener('click', () => openModal(src, project.images));
             frame.appendChild(img);
             imageContainer.appendChild(frame);
@@ -74,15 +74,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalImg = document.createElement('img');
     modalContent.appendChild(modalImg);
 
-    const prevBtn = document.createElement('button');
+    const prevBtn = document.createElement('span');
     prevBtn.classList.add('prev');
-    prevBtn.textContent = '❮';
+    prevBtn.innerHTML = '&#10094;';
     prevBtn.onclick = () => changeImage(-1);
     modalContent.appendChild(prevBtn);
 
-    const nextBtn = document.createElement('button');
+    const nextBtn = document.createElement('span');
     nextBtn.classList.add('next');
-    nextBtn.textContent = '❯';
+    nextBtn.innerHTML = '&#10095;';
     nextBtn.onclick = () => changeImage(1);
     modalContent.appendChild(nextBtn);
 
@@ -103,13 +103,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function changeImage(direction) {
         currentIndex += direction;
+        if (currentIndex < 0) currentIndex = currentImages.length - 1;
+        if (currentIndex >= currentImages.length) currentIndex = 0;
         modalImg.src = currentImages[currentIndex];
         updateButtons();
     }
 
     function updateButtons() {
-        prevBtn.style.visibility = currentIndex === 0 ? 'hidden' : 'visible';
-        nextBtn.style.visibility = currentIndex === currentImages.length - 1 ? 'hidden' : 'visible';
+        prevBtn.style.display = currentImages.length > 1 ? 'block' : 'none';
+        nextBtn.style.display = currentImages.length > 1 ? 'block' : 'none';
     }
 
     modal.addEventListener('click', (e) => {
@@ -120,4 +122,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Loop through the projects array and add each project as a portfolio item
     projects.forEach(project => addPortfolioItem(project));
+
+    // Keyboard navigation for modal
+    document.addEventListener('keydown', (e) => {
+        if (modal.style.display === 'flex') {
+            if (e.key === 'ArrowLeft') changeImage(-1);
+            if (e.key === 'ArrowRight') changeImage(1);
+            if (e.key === 'Escape') closeModal();
+        }
+    });
 });
