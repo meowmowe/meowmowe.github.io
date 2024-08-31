@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: 'Flower Shop',
-            images: ['images/flower shop/1.png', 'images/flower shop/2.png', 'images/flower shop/3.png'],
+            images: ['images/flowerShop/1.png', 'images/flowerShop/2.png', 'images/flowerShop/3.png'],
             description: 'This is a brief description of the Flower Shop project...'
         },
         {
