@@ -9,6 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
             description: 'This is a brief description of the AR project...'
         },
         {
+            title: 'Deneme',
+            images: ['images/AR/1.png', 'images/AR/2.jpeg', 'images/AR/3.png'],
+            description: 'This is a brief description of the AR project...'
+        },
+        {
             title: 'Zenocycle Project',
             images: ['images/zenocycle/1.png', 'images/zenocycle/2.png', 'images/zenocycle/3.png', 'images/zenocycle/4.png', 'images/zenocycle/5.png'],
             description: 'This is a brief description of the Zenocycle project...'
@@ -24,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: 'This is a brief description of the Misc...'
         }
     ];
+    
 
     // Function to add a portfolio item
     function addPortfolioItem(project) {
