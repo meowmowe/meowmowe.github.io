@@ -4,29 +4,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Array of objects representing your projects
     const projects = [
         {
-            title: 'AR Project',
+            title: 'AR Furniture Project',
             images: ['images/AR/1.png', 'images/AR/2.jpeg', 'images/AR/3.png'],
-            description: 'This is a brief description of the AR project...'
-        },
-        {
-            title: 'Deneme',
-            images: ['images/AR/1.png', 'images/AR/2.jpeg', 'images/AR/3.png'],
-            description: 'This is a brief description of the AR project...'
+            description: 'During my internship, I developed an innovative augmented reality (AR) project focused on furniture visualization. This project demonstrates the practical application of AR technology in interior design and furniture retail.'
         },
         {
             title: 'Zenocycle Project',
             images: ['images/zenocycle/1.png', 'images/zenocycle/2.png', 'images/zenocycle/3.png', 'images/zenocycle/4.png', 'images/zenocycle/5.png'],
-            description: 'This is a brief description of the Zenocycle project...'
+            description: 'In this immersive game, you take on the role of a truck driver navigating a complex, post-apocalyptic world. Your mission is to keep the remnants of civilization alive through skillful logistics and daring expeditions..'
         },
         {
-            title: 'Flower Shop',
+            title: 'Flowers Shop',
             images: ['images/flowerShop/1.png', 'images/flowerShop/2.png', 'images/flowerShop/3.png'],
-            description: 'This is a brief description of the Flower Shop project...'
+            description: "Immerse yourself in the colorful and competitive world of floristry with Flower Shop Tycoon! In this engaging simulation game,you'll cultivate, arrange, and sell a variety of beautiful blooms while navigating a dynamic market economy."
         },
         {
             title: 'Misc',
             images: ['images/Misc/3310.png', 'images/Misc/ksu.png'],
-            description: 'This is a brief description of the Misc...'
+            description: "I've dipped my toes into various game jams and started a handful of experimental projects. While these aren't polished products, they've been great learning experiences"
         }
     ];
     
