@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: 'Misc',
-            images: ['images/Misc/3310.png', 'images/Misc/ksu.png'],
+            images: ['images/Misc/3310.png', 'images/Misc/ksu.png','images/Misc/col.png'],
             description: "I've dipped my toes into various game jams and started a handful of experimental projects. While these aren't polished products, they've been great learning experiences"
         }
     ];
