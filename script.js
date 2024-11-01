@@ -22,7 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Misc',
             images: ['images/Misc/3310.png', 'images/Misc/ksu.png','images/Misc/col.png'],
             description: "I've dipped my toes into various game jams and started a handful of experimental projects. While these aren't polished products, they've been great learning experiences"
-        }
+        },    {
+            title: 'Pomodoro Project',
+            images: ['images/pomodoro/1.png', 'images/pomodoro/2.png', 'images/pomodoro/3.png'], // Add your actual image paths
+            description: 'A productivity-focused Pomodoro timer application that helps users maintain focus through structured work and break intervals. Features customizable timers, progress tracking, and a clean, user-friendly interface.'
+        }    
     ];
     
 
