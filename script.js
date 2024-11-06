@@ -3,11 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Array of objects representing your projects
     const projects = [
-        {
-            title: 'AR Furniture Project',
-            images: ['images/AR/1.png', 'images/AR/2.jpeg'],
-            description: 'During my internship, I developed an innovative augmented reality (AR) project focused on furniture visualization. This project demonstrates the practical application of AR technology in interior design and furniture retail.'
-        },
+   
         {
             title: 'Zenocycle Project',
             images: ['images/zenocycle/1.png', 'images/zenocycle/2.png', 'images/zenocycle/3.png', 'images/zenocycle/4.png', 'images/zenocycle/5.png'],
@@ -19,14 +15,21 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "Immerse yourself in the colorful and competitive world of floristry with Flower Shop Tycoon! In this engaging simulation game,you'll cultivate, arrange, and sell a variety of beautiful blooms while navigating a dynamic market economy."
         },
         {
-            title: 'Misc',
-            images: ['images/Misc/3310.png', 'images/Misc/ksu.png','images/Misc/col.png'],
-            description: "I've dipped my toes into various game jams and started a handful of experimental projects. While these aren't polished products, they've been great learning experiences"
-        },    {
             title: 'Pomodoro Project',
             images: ['images/pomodoro/1.jpg', 'images/pomodoro/2.jpg', 'images/pomodoro/3.jpg','images/pomodoro/4.jpg'], // Add your actual image paths
             description: 'A productivity-focused Pomodoro timer application that helps users maintain focus through structured work and break intervals. Features customizable timers, progress tracking, and a clean, user-friendly interface. Enhances user engagement by providing interesting trivia about alternative activities that could be completed in their accumulated work time, making productivity tracking more entertaining and relatable.'
-        }    
+        },
+        {
+            title: 'AR Furniture Project',
+            images: ['images/AR/1.png', 'images/AR/2.jpeg'],
+            description: 'During my internship, I developed an innovative augmented reality (AR) project focused on furniture visualization. This project demonstrates the practical application of AR technology in interior design and furniture retail.'
+        },
+          ,
+            {
+            title: 'Misc',
+            images: ['images/Misc/3310.png', 'images/Misc/ksu.png','images/Misc/col.png'],
+            description: "I've dipped my toes into various game jams and started a handful of experimental projects. While these aren't polished products, they've been great learning experiences"
+        }
     ];
     
 
