@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const projects = [
         {
             title: 'AR Furniture Project',
-            images: ['images/AR/1.png', 'images/AR/2.jpeg', 'images/AR/3.png'],
+            images: ['images/AR/1.png', 'images/AR/2.jpeg'],
             description: 'During my internship, I developed an innovative augmented reality (AR) project focused on furniture visualization. This project demonstrates the practical application of AR technology in interior design and furniture retail.'
         },
         {
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },    {
             title: 'Pomodoro Project',
             images: ['images/pomodoro/1.jpg', 'images/pomodoro/2.jpg', 'images/pomodoro/3.jpg','images/pomodoro/4.jpg'], // Add your actual image paths
-            description: 'A productivity-focused Pomodoro timer application that helps users maintain focus through structured work and break intervals. Features customizable timers, progress tracking, and a clean, user-friendly interface.'
+            description: 'A productivity-focused Pomodoro timer application that helps users maintain focus through structured work and break intervals. Features customizable timers, progress tracking, and a clean, user-friendly interface. Enhances user engagement by providing interesting trivia about alternative activities that could be completed in their accumulated work time, making productivity tracking more entertaining and relatable.'
         }    
     ];
     
