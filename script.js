@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
    
         {
             title: 'Zenocycle Project',
-            images: ['images/zenocycle/1.png', 'images/zenocycle/2.png', 'images/zenocycle/3.png', 'images/zenocycle/4.png', 'images/zenocycle/5.png'],
+            images: ['images/zenocycle/1.png','<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1034121921?h=13f7282a14&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Robotic prosthetic arm"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>'
+                ,'images/zenocycle/2.png', 'images/zenocycle/3.png', 'images/zenocycle/4.png', 'images/zenocycle/5.png'],
             description: 'In this immersive game, you take on the role of a truck driver navigating a complex, post-apocalyptic world. Your mission is to keep the remnants of civilization alive through skillful logistics and daring expeditions..'
         },
         {
