@@ -3,36 +3,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Array of objects representing your projects
     const projects = [
-   
         {
             title: 'Zenocycle Project',
-            images: ['images/zenocycle/1.png','<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1034121921?h=13f7282a14&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Robotic prosthetic arm"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>'
-                ,'images/zenocycle/2.png', 'images/zenocycle/3.png', 'images/zenocycle/4.png', 'images/zenocycle/5.png'],
-            description: 'In this immersive game, you take on the role of a truck driver navigating a complex, post-apocalyptic world. Your mission is to keep the remnants of civilization alive through skillful logistics and daring expeditions..'
+            images: ['images/zenocycle/1.png', 'images/zenocycle/2.png', 'images/zenocycle/3.png', 'images/zenocycle/4.png', 'images/zenocycle/5.png'],
+            description: 'In this immersive game, you take on the role of a truck driver navigating a complex, post-apocalyptic world. Your mission is to keep the remnants of civilization alive through skillful logistics and daring expeditions.'
         },
         {
             title: 'Flowers Shop',
             images: ['images/flowerShop/1.png', 'images/flowerShop/2.png', 'images/flowerShop/3.png'],
-            description: "Immerse yourself in the colorful and competitive world of floristry with Flower Shop Tycoon! In this engaging simulation game,you'll cultivate, arrange, and sell a variety of beautiful blooms while navigating a dynamic market economy."
+            description: 'Immerse yourself in the colorful and competitive world of floristry with Flower Shop Tycoon! In this engaging simulation game, you\'ll cultivate, arrange, and sell a variety of beautiful blooms while navigating a dynamic market economy.'
         },
         {
             title: 'Pomodoro Project',
-            images: ['images/pomodoro/1.jpg', 'images/pomodoro/2.jpg', 'images/pomodoro/3.jpg','images/pomodoro/4.jpg'], // Add your actual image paths
-            description: 'A productivity-focused Pomodoro timer application that helps users maintain focus through structured work and break intervals. Features customizable timers, progress tracking, and a clean, user-friendly interface. Enhances user engagement by providing interesting trivia about alternative activities that could be completed in their accumulated work time, making productivity tracking more entertaining and relatable.'
+            images: ['images/pomodoro/1.jpg', 'images/pomodoro/2.jpg', 'images/pomodoro/3.jpg', 'images/pomodoro/4.jpg'],
+            description: 'A productivity-focused Pomodoro timer application that helps users maintain focus through structured work and break intervals. Features customizable timers, progress tracking, and a clean, user-friendly interface.'
         },
         {
             title: 'AR Furniture Project',
             images: ['images/AR/1.png', 'images/AR/2.jpeg'],
             description: 'During my internship, I developed an innovative augmented reality (AR) project focused on furniture visualization. This project demonstrates the practical application of AR technology in interior design and furniture retail.'
         },
-          ,
-            {
+        {
             title: 'Misc',
-            images: ['images/Misc/3310.png', 'images/Misc/ksu.png','images/Misc/col.png'],
-            description: "I've dipped my toes into various game jams and started a handful of experimental projects. While these aren't polished products, they've been great learning experiences"
+            images: ['images/Misc/3310.png', 'images/Misc/ksu.png', 'images/Misc/col.png'],
+            description: 'I\'ve dipped my toes into various game jams and started a handful of experimental projects. While these aren\'t polished products, they\'ve been great learning experiences.'
         }
     ];
-    
 
     // Function to add a portfolio item
     function addPortfolioItem(project) {
@@ -56,6 +52,21 @@ document.addEventListener('DOMContentLoaded', () => {
             imageContainer.appendChild(frame);
         });
         item.appendChild(imageContainer);
+
+        // Add Vimeo video for Zenocycle Project
+        if (project.title === 'Zenocycle Project') {
+            const videoContainer = document.createElement('div');
+            videoContainer.style.padding = '56.25% 0 0 0';
+            videoContainer.style.position = 'relative';
+
+            videoContainer.innerHTML = `
+                <iframe src="https://player.vimeo.com/video/1034121921?h=13f7282a14&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                    frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                    title="Robotic prosthetic arm"></iframe>
+            `;
+            item.appendChild(videoContainer);
+        }
 
         const desc = document.createElement('p');
         desc.classList.add('portfolio-description');
