@@ -52,21 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imageContainer.appendChild(frame);
         });
         item.appendChild(imageContainer);
-
-        // Add Vimeo video for Zenocycle Project
-        if (project.title === 'Zenocycle Project') {
-            const videoContainer = document.createElement('div');
-            videoContainer.style.padding = '56.25% 0 0 0';
-            videoContainer.style.position = 'relative';
-
-            videoContainer.innerHTML = `
-                <iframe src="https://player.vimeo.com/video/1034121921?h=13f7282a14&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                    frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
-                    style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                    title="Robotic prosthetic arm"></iframe>
-            `;
-            item.appendChild(videoContainer);
-        }
+ 
 
         const desc = document.createElement('p');
         desc.classList.add('portfolio-description');
