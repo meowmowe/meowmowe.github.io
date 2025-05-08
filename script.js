@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Create images directory structure if it doesn't exist
+    // This is just a placeholder comment, in a real environment 
+    // you would need to ensure these directories exist on your server
+    // /images/3dmodels/ folder with images 1.png through 6.png and demo.mp4
     const portfolioContainer = document.querySelector('.portfolio-container');
 
     // Array of objects representing your projects
@@ -7,6 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Zenocycle Project',
             images: ['images/zenocycle/1.png', 'images/zenocycle/2.png', 'images/zenocycle/3.png', 'images/zenocycle/4.png', 'images/zenocycle/5.png'],
             description: 'In this immersive game, you take on the role of a truck driver navigating a complex, post-apocalyptic world. Your mission is to keep the remnants of civilization alive through skillful logistics and daring expeditions.'
+        },
+        {
+            title: 'My 3D Models',
+            images: ['images/3dmodels/1.png', 'images/3dmodels/2.png', 'images/3dmodels/3.png', 'images/3dmodels/4.png', 'images/3dmodels/5.png', 'images/3dmodels/6.png'],
+            youtubeId: 'OFWQVZQFUeg', // Replace with your actual YouTube video ID
+            description: 'A showcase of my 3D modeling work created with various software tools. These models demonstrate my skills in design, texturing, and attention to detail across different styles and applications.'
         },
         {
             title: 'Flowers Shop',
@@ -39,6 +49,21 @@ document.addEventListener('DOMContentLoaded', () => {
         header.textContent = project.title;
         item.appendChild(header);
 
+        // Add YouTube video if it exists
+        if (project.youtubeId) {
+            const videoContainer = document.createElement('div');
+            videoContainer.classList.add('video-container', 'embed');
+            
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://www.youtube.com/embed/${project.youtubeId}`;
+            iframe.frameBorder = "0";
+            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+            iframe.allowFullscreen = true;
+            
+            videoContainer.appendChild(iframe);
+            item.appendChild(videoContainer);
+        }
+
         const imageContainer = document.createElement('div');
         imageContainer.classList.add('portfolio-images');
         project.images.forEach(src => {
@@ -51,8 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
             img.alt = project.title;
             img.addEventListener('click', () => openModal(src, project.images));
             frame.appendChild(img);
-            
-            // "View Full" text has been removed
             
             imageContainer.appendChild(frame);
         });
