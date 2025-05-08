@@ -44,11 +44,21 @@ document.addEventListener('DOMContentLoaded', () => {
         project.images.forEach(src => {
             const frame = document.createElement('div');
             frame.classList.add('image-frame');
+            
+            // Create image element
             const img = document.createElement('img');
             img.src = src;
             img.alt = project.title;
             img.addEventListener('click', () => openModal(src, project.images));
             frame.appendChild(img);
+            
+            // Add "View Full" text link under each image
+            const viewFull = document.createElement('div');
+            viewFull.classList.add('view-full');
+            viewFull.textContent = "View Full";
+            viewFull.addEventListener('click', () => openModal(src, project.images));
+            frame.appendChild(viewFull);
+            
             imageContainer.appendChild(frame);
         });
         item.appendChild(imageContainer);
