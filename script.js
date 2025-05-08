@@ -52,12 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img.addEventListener('click', () => openModal(src, project.images));
             frame.appendChild(img);
             
-            // Add "View Full" text link under each image
-            const viewFull = document.createElement('div');
-            viewFull.classList.add('view-full');
-            viewFull.textContent = "View Full";
-            viewFull.addEventListener('click', () => openModal(src, project.images));
-            frame.appendChild(viewFull);
+            // "View Full" text has been removed
             
             imageContainer.appendChild(frame);
         });

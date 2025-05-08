@@ -222,9 +222,8 @@ body {
 .image-frame {
     width: 100%;
     max-width: 150px;
-    height: 140px;  /* Increased height to accommodate view full link */
+    height: 120px;  /* Reduced height since view full link is removed */
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -232,29 +231,16 @@ body {
     border-radius: 5px;
     padding: 5px;
     background-color: #f9f9f9;
+    cursor: pointer; /* Added cursor pointer to indicate clickable */
 }
 
-.view-full {
-    font-size: 0.8em;
-    color: #8B4513;
-    margin-top: 5px;
-    cursor: pointer;
-    background-color: #ffefd5;
-    padding: 2px 5px;
-    border-radius: 3px;
-    transition: all 0.2s ease-in-out;
-}
-
-.view-full:hover {
-    background-color: #8B4513;
-    color: #ffefd5;
-}
+/* Removed .view-full class styles since it's no longer needed */
 
 .portfolio-item img {
     width: 100%;
     height: 100%;
-    object-fit: contain;  /* Changed from 'cover' to 'contain' to show entire image */
-    background-color: #f5f5f5; /* Light background to see image boundaries */
+    object-fit: contain;
+    background-color: #f5f5f5;
     transition: transform 0.2s ease-in-out;
     position: relative;
     left: 50%;
